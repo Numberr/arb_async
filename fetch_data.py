@@ -21,8 +21,6 @@ async def write_parsed_data(exchange):
             async with session.get(url=url) as response:
                 resp = await response.json()
                 await write_data(exchange, resp)
-                # with open(f'{exchange}.json','w', encoding='utf-8') as f:
-                #     json.dump(resp, f)
         except Exception:
             print('Ошибка')
 
